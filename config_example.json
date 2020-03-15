@@ -1,0 +1,24 @@
+{
+  "EnableProxy": false,
+  "Proxy": "127.0.0.1:10800",
+  "CheckSec": 30,
+  "Twitter_API_KEY": "",
+  "Target": [
+    {
+      "Twitter_UserID": 1200357161747939328,
+      "GroupID": [
+        123456789
+      ],
+      "CqHost": "",
+      "CqToken": ""
+    },
+    {
+      "Twitter_UserID": 998336069992001537,
+      "GroupID": [
+        987654321
+      ],
+      "CqHost": "",
+      "CqToken": ""
+    }
+  ]
+}
