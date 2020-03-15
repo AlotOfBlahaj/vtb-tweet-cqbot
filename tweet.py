@@ -40,7 +40,7 @@ class TweetApi:
                 r = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload,
                                  proxies=proxies, headers={"Authorization": "Bearer " + self.API_KEY})
             else:
-                r = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload)
+                r = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", params=payload, headers={"Authorization": "Bearer " + self.API_KEY})
             if r.status_code == 200:
                 tweet_list = self.formatTweet(r.json())
                 if not tweet_list:
