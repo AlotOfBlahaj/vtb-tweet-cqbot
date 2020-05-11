@@ -19,12 +19,13 @@ class TweetApi:
         for t in resp:
             message = [
                 f"{t['user']['name']}的推特更新了\n正文:{t['text']}\n链接：https://twitter.com/{t['user']['id_str']}/status/{t['id_str']}"]
-            if "media" in t["entities"]:
-                for i in t["entities"]["media"]:
-                    if "photo" == i["type"]:
-                        message.append(f"\n[CQ:image,file={i['media_url']}]")
-            result.append("".join(message))
-            print(f"get tweets: {message}")
+            if "extended_entities" in t:
+                if "media" in t["extended_entities"]:
+                    for i in t["extended_entities"]["media"]:
+                        if "photo" == i["type"]:
+                            message.append(f"\n[CQ:image,file={i['media_url']}]")
+                result.append("".join(message))
+                print(f"get tweets: {message}")
         return result
 
     def updateTweet(self):
