@@ -24,8 +24,8 @@ class TweetApi:
                     for i in t["extended_entities"]["media"]:
                         if "photo" == i["type"]:
                             message.append(f"\n[CQ:image,file={i['media_url']}]")
-                result.append("".join(message))
-                print(f"get tweets: {message}")
+            result.append("".join(message))
+            print(f"get tweets: {message}")
         return result
 
     def updateTweet(self):
